@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src='lib/vue.js'></script>
+</head>
+<body>
+	<!--
+		Composing with Components
+	-->
+	<hr>
+	<h2>Composing with Components</h2>
+	<ol>
+		<!-- Create an instance of the todo-item component -->
+		<todo-item></todo-item>
+	</ol>
+</body>
+<script type="text/javascript">
+
+	Vue.component('todo-item',{
+		template: '<li>This is a todo</li>'
+	})
+
+</script>
+</html>

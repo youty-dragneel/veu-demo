@@ -60,9 +60,19 @@
 	-->
 	<hr>
 	<h2>Handling User input</h2>
-	<div id="app-5">
+	<div id="app-6">
 		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Reverse Message</button>
+		<button v-on:dblclick="dblReverseMessage">Reverse Message</button>
+
 	</div>
+
+	<div id="app-7">
+		<p>{{ message }}</p>
+		<input v-model="message">
+	</div>
+
+	
 </body>
 <script type="text/javascript">
 	var app = new Vue({
@@ -108,6 +118,28 @@
 				{ text : 'Learn Vue' },
 				{ text : 'Learn Build something awesome' },
 			]
+		}
+	})
+
+	var app6 = new Vue({
+		el : '#app-6',
+		data : {
+			message : 'Hello Vue.js'
+		},
+		methods:{
+			reverseMessage : function(){
+				this.message = this.message.split('').reverse().join('')
+			},
+			dblReverseMessage : function(){
+				this.message = this.message.split('').reverse().join('')	
+			}
+		}
+	});
+
+	var app7 = new Vue({
+		el : "#app-7",
+		data : {
+			message : 'Hello Vue!'
 		}
 	})
 
