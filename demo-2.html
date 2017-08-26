@@ -5,10 +5,11 @@
 	<script type="text/javascript" src='lib/vue.js'></script>
 </head>
 <body>
-
+	<div id="example"></div>
+	<span v-once>This will never change: {{ msg }}</span>
 </body>
 <script type="text/javascript">
-	var vm = new Vue({
+	/*var vm = new Vue({
 		//constructor	
 	})
 
@@ -16,6 +17,28 @@
 		// Extension options
 	})
 
-	var myComponentInstance = new myComponent()
+	var myComponentInstance = new myComponent()*/
+
+	var data = { a: 1 } // array
+	
+	var vm = new Vue({
+		el   : '#example',
+		data : data
+	})
+
+	vm.a = 3
+
+	vm.data = 'hello'
+
+	console.log(vm.$data)
+
+	console.log(vm.$el === document.getElementById('example'))
+	//console.log(vm.$data)
+
+	vm.$watch('a', function(newVal, oldVal){
+		console.log('Watch :')
+	})
+
+
 </script>
 </html>
