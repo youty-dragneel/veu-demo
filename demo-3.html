@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src='lib/vue.min.js'></script>
+</head>
+<body>
+<div id="demo">
+  <input v-model="message" v-on:keypress="isNumber(event)">
+</div>
+	
+</body>
+<script type="text/javascript">
+var data = {
+  message: 1234.34
+}
+
+var demo = new Vue({
+  el: '#demo',
+  data: data,
+  methods: {
+    isNumber: function(evt) {
+      evt = (evt) ? evt : window.event;
+      var charCode = (evt.which) ? evt.which : evt.keyCode;
+      if((charCode) > 31 && (charCode < 48 || charCode > 57) && charCode !== 46){
+      	evt.preventDefault();
+      } else {
+      	return true;
+      }
+    }
+  }
+});
+
+</script>
+</html>
