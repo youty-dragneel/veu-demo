@@ -23,36 +23,29 @@
 	      We also need to provide each component with a "key",
 	      which will be explained later.
 	    -->
-	   	<todo-item
-	   		v-for="item in groceryList"
-	   		v-bind:todo="item"
-	   		v-bind:key="item.id">
+	   	<todo-item 
+	   		v-for='item in groceryList'
+	   		v-bind:todo='item'
+	   		v-bind:key='item.id'>
 	   	</todo-item>
 	  </ol>
 	</div>
 </body>
 <script type="text/javascript">
-
 	Vue.component('todo-item',{
-		props: ['todo'],
-		template: '<li>This is a todo</li>'
-	})
-	
-	Vue.component('todo-item', {
-	  props: ['todo'],
-	  template: '<li>{{ todo.text }}</li>'
+		props : ['todo'] , 
+		template : '<li>{{ todo.text }}</li>'
 	})
 
 	var app7 = new Vue({
-	  el: '#app-1',
-	  data: {
-	    groceryList: [
-	      { id: 0, text: 'Vegetables' },
-	      { id: 1, text: 'Cheese' },
-	      { id: 2, text: 'Whatever else humans are supposed to eat' }
-	    ]
-	  }
+		el : '#app-1',
+		data : {
+			groceryList : [
+				{ id: 0, text: 'Vegetables'    },
+				{ id: 1, text: 'Cheese'        },
+				{ id: 2, text: 'Whatever else' }
+			]
+		}
 	})
-
 </script>
 </html>
